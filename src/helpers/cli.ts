@@ -1,6 +1,7 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { resolve } from 'path'
+
 export interface ICliArgs {
   config: string;
 }

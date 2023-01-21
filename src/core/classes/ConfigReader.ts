@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 import isValidGlob from 'is-valid-glob'
 import { IConfig, IPatternGroup, PatternGroups } from '../../types/Config.js'
-
+import { JSON } from './../../helpers/JSON.js'
 import { isStringValidRegExp } from '../../helpers/isStringValidRegExp.js'
 
 interface PatternGroupValidation {
@@ -36,7 +36,7 @@ export class ConfigReader {
     const filePath: URL = new URL( this.configPath, import.meta.url )
     const configStr: string = await readFile( filePath, { encoding: 'utf-8' } )
 
-    const config: IConfig = JSON.parse( configStr )
+    const config: IConfig = JSON.parse( configStr ) as IConfig
 
     const configValidationError: AggregateError | null = this.validateConfig( config )
     if ( configValidationError !== null ) {

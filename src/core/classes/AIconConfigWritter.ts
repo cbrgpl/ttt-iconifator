@@ -3,6 +3,8 @@ import { Buffer } from 'node:buffer'
 
 import { IBindedEntity } from '../../types/IBindedEntity.js'
 import { type PatternGroups } from '../../types/Config.js'
+
+import { JSON } from './../../helpers/JSON.js'
 import { IJSONObject } from '../../types/IJsonObject.js'
 
 export abstract class AIconConfigWritter {
