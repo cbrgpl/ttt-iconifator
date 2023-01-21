@@ -1,4 +1,6 @@
-export interface IConfig {
+import { IJSONObject } from './IJsonObject.js'
+
+export interface IConfig extends IJSONObject {
   root: string;
   patterns: Record<PatternGroups, IPatternGroup>;
   ignore: string[];
