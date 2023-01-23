@@ -5,7 +5,7 @@ const parse = ( json: string ): IJSONObject => {
   try {
     return JSON.parse( json )
   } catch ( err ) {
-    throw new ParseError( json )
+    throw new ParseError( json, 'JSON', err.message )
   }
 }
 
