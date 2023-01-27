@@ -1,15 +1,15 @@
 {
-  "name": "ttt-icon-customizer",
+  "name": "ttt-iconifator",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Customizer for VSC with icon theme plugin",
   "bin": {
-    "customize-icons": "./dist/bin.js"
+    "customize": "./dist/bin.js"
   },
   "scripts": {
     "compile": "npx tsc --project tsconfig.json --watch"
   },
-  "author": "",
+  "author": "cbrgpl",
   "license": "ISC",
   "devDependencies": {
     "@types/glob": "^8.0.0",
