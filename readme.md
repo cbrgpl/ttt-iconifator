@@ -4,6 +4,18 @@ The package used to generate the config for the VSC plugin "[PKief.material-icon
 
 ## Config
 
+Search patterns:
+
+**Files:**
+
+- [x] Valid Globs
+
+**Directories:**
+
+- [x] Valid Regular expressions
+
+There is no need to include / at the beginning and end of the regular expression.<br>
+"/The[A-Za-z]+Component/" ----> "The[A-Za-z]+Component"
 
 
 ## Usage 
@@ -28,4 +40,16 @@ The package used to generate the config for the VSC plugin "[PKief.material-icon
   "ignore": [ "node_modules", "dist" ]
 }
 ```
-3. `npx ttt-iconifator`
+3. Use command `npx iconifator` anywhere. On my projects, I bind it to npm prepare and predev;
+
+My *package-json.script* with husky as addition
+
+```json
+{
+  "scripts": {
+    "predev": "npx ttt-iconifator",
+    "dev": "vite",
+    "prepare": "husky install && npx ttt-iconifator"
+  }
+}
+```
