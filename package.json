@@ -22,6 +22,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "ajv": "^8.12.0",
     "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",
     "glob": "^8.0.3",

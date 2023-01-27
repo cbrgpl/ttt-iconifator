@@ -9,7 +9,7 @@ export const CI = new class CI {
   }
 
   error( error: ALogableError ) {
-    error.logSelf( ( text: string ): void => this.timestampLog( text ), ( text: string ): void => this.log( text ) )
+    error.logSelf( ( text: string ): void => this.timestampLog( text ), ( text?: string ): void => this.log( text ) )
   }
 
   finish( summary: string ) {

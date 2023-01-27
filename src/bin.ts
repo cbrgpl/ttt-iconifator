@@ -6,16 +6,21 @@ import { VscConfigWritter } from './core/classes/VscConfigWritter.js'
 import { cli } from './helpers/cli.js'
 import { CI } from './helpers/CI.js'
 
-// TODO Write class to validate readed config and CLI args
+import { validate } from './helpers/validate.js'
+import { configValidation } from './schemas/validation.config.schema.js'
+import { cliValidation } from './schemas/validation.cli.schema.js'
 
 import { ALogableError } from './errors/ALogableError.js';
 ( async (): Promise<void> => {
   try {
     CI.step( 'Customization process is running on..' )
     const args = cli.getCliArgs()
+    validate( 'cli-args', args, cliValidation )
 
     const reader = new ConfigReader( args.config )
     const config = await reader.read()
+    validate( args.config, config, configValidation )
+
     CI.step( 'Config have been read' )
 
     const scanner = new EntityNameScanner( config )
@@ -31,7 +36,7 @@ import { ALogableError } from './errors/ALogableError.js';
     if ( err instanceof ALogableError ) {
       CI.error( err )
     } else {
-      null
+      console.log( err )
     }
 
     process.exit( 1 )

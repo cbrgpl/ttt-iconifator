@@ -21,11 +21,13 @@ export abstract class ALogableError extends Error {
     resultContent += ' '.repeat( rectRowLength )
     rows.forEach( row => {
       const appendWhitespaceQnt: number = maxRowLegth + padding - row.length
-      resultContent += `\n${ ' '.repeat( padding ) }${ row }${ ' '.repeat( appendWhitespaceQnt ) }`
+      resultContent += `\n${ ' '.repeat( padding ) }${ row.replace( '\n', '' ) }${ ' '.repeat( appendWhitespaceQnt ) }`
     } )
+
+    resultContent += '\n' + ' '.repeat( rectRowLength )
 
     return resultContent
   }
 
-  abstract logSelf( textLogger: ( text: string ) => void, codeLogger: ( text: string ) => void ): void;
+  abstract logSelf( timestampLogger: ( text: string ) => void, logger: ( text?: string ) => void ): void;
 }

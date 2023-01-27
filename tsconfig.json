@@ -2,12 +2,15 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
     "outDir": "dist",
     "sourceMap": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
     "lib": [
       "ES2021.Promise",
-    ]
+    ],
+    "allowSyntheticDefaultImports": true,
   }
 }
