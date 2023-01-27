@@ -1,6 +1,6 @@
 {
   "name": "ttt-iconifator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Customizer for VSC with icon theme plugin",
   "bin": {
@@ -9,6 +9,13 @@
   "scripts": {
     "compile": "npx tsc --project tsconfig.json --watch"
   },
+  "keyword": [
+    "vsc",
+    "icon",
+    "globs",
+    "regexp",
+    "material icon theme"
+  ],
   "author": "cbrgpl",
   "license": "ISC",
   "devDependencies": {
