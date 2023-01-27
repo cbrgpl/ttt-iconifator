@@ -23,7 +23,7 @@ export class ParseError extends ALogableError {
     return 'Target content of process:'
   }
 
-  logSelf( timestampLogger: ( text: string ) => void, logger: ( text: string ) => void ): void {
+  logSelf( timestampLogger: ( text: string ) => void, logger: ( text?: string ) => void ): void {
     timestampLogger( this.formatting.error( this.formatting.title( this.title ) ) )
     logger( this.formatting.error( this.message ) )
     logger()
