@@ -15,7 +15,10 @@
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
-            ]
+            ],
+            "env": {
+                "config": "NODE_TLS_REJECT_UNAUTHORIZED",
+            },
         }
     ]
 }
