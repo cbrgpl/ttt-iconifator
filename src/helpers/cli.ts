@@ -26,19 +26,9 @@ export const cli = new class Cli {
   }
 
   getCliArgs(): ICliArgs {
-    const validationError: AggregateError | null = this.validateArgs()
-
-    if ( validationError !== null ) {
-      throw validationError
-    }
-
     this.fillArgvWithDefaultValues()
 
     return this.getCliConfig
-  }
-
-  private validateArgs(): AggregateError | null {
-    return null
   }
 
   private fillArgvWithDefaultValues() {

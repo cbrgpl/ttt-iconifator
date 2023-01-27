@@ -10,6 +10,8 @@ import { validate } from './helpers/validate.js'
 import { configValidation } from './schemas/validation.config.schema.js'
 import { cliValidation } from './schemas/validation.cli.schema.js'
 
+import { InternalError } from './errors/InternalError.js'
+
 import { ALogableError } from './errors/ALogableError.js';
 ( async (): Promise<void> => {
   try {
@@ -36,7 +38,7 @@ import { ALogableError } from './errors/ALogableError.js';
     if ( err instanceof ALogableError ) {
       CI.error( err )
     } else {
-      console.log( err )
+      CI.error( new InternalError( err.message, err.stack ) )
     }
 
     process.exit( 1 )
