@@ -9,7 +9,7 @@
   "scripts": {
     "compile": "npx tsc --project tsconfig.json --watch"
   },
-  "keyword": [
+  "keywords": [
     "vsc",
     "icon",
     "globs",
